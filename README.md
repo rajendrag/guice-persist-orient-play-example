@@ -90,4 +90,6 @@ Actual sample is very simple: [SampleController](app/controllers/SampleControlle
 ```
 
 Note that `@DetachResult` used to convert returned orient proxies to simple pojos (which play could serialize to json).
-In normal application, such logic will be in service level or even in controller (but make sure detaching occur inside transaction (@Transactional)).
+In normal application, such logic will be in service level or even in controller (for example, using repository.detach(..) method 
+(which is inherited from object mixin)). But make sure detaching occur inside transaction (@Transactional)).
+.
