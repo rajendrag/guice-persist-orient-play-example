@@ -36,7 +36,8 @@ public class Module extends AbstractModule {
         // enable repositories support
         install(new RepositoryModule());
 
-        // custom data initializer
+        // custom data initializer (it is not required and used only for demo purposes - to generate sample data)
+        // simply remove binding if no bootstrap required
         bind(DataInitializer.class).to(Bootstrap.class);
 
         // bind to play lifecycle (to start / stop persistence support)
