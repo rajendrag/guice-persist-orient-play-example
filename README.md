@@ -79,7 +79,7 @@ and avoid NoClassDefFound errors on start.
 
 ### Sample
 
-Actual sample is very simple: [SampleController](app/constrollers/SampleController.java). It simply loads all records in `Sample` table and renders it as json.
+Actual sample is very simple: [SampleController](app/controllers/SampleController.java). It simply loads all records in `Sample` table and renders it as json.
 
 [Repository](app/repositories/SampleRepository.java) used for accessing database:
 
