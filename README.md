@@ -1,11 +1,11 @@
-# [guice-persist-orient](https://github.com/xvik/guice-persist-orient) [Play Framework](https://www.playframework.com/) integration example
+# [Play](https://www.playframework.com/) integration for [guice-persist-orient](https://github.com/xvik/guice-persist-orient) example
 
 ### About
 
 Sample prepared with activator 1.3.10 for play 2.5.8 using guice-persist-orient 3.2.0 (orient 2.1.23).
 [Official Java seed](https://github.com/playframework/playframework/tree/master/templates/play-java) was used.
 
-(play java docs)[https://www.playframework.com/documentation/2.5.x/JavaHome]
+[play java docs](https://www.playframework.com/documentation/2.5.x/JavaHome)
 
 ### Run
 
@@ -21,7 +21,7 @@ Next open http://localhost:9000/samples to see sample json output - demo of usin
 
 ### Integration
 
-guice-persist-orient dependency (`build.sbt`):
+guice-persist-orient dependency ([build.sbt](build.sbt)):
 
 ```scala
 libraryDependencies ++= Seq(
@@ -32,7 +32,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-Guice module (recognized by play convention) (`app/Module.java`):
+Guice module (recognized by play convention) ([Module](app/Module.java)):
 
 ```java
  @Override
@@ -51,11 +51,11 @@ Guice module (recognized by play convention) (`app/Module.java`):
     }
 ```
 
-`app/model/Sample` class will be registered as scheme orient.
+[Sample](app/model/Sample.java) class will be registered as scheme orient.
 
-`app/Bootstrap.java` will insert 10 `Sample` records on startup (if table is empty)
+[Bootstrap](app/Bootstrap.java) will insert 10 `Sample` records on startup (if table is empty)
 
-`app/PersistentLifecycle.class` will start/stop orient persistence support (lifecycle hook).
+[PersistentLifecycle](app/PersistentLifecycle) will start/stop orient persistence support (lifecycle hook).
 
 Due to new play guidelines, global object usage is deprecated and now it's recommended to use 
 [constructor as startup hook](https://www.playframework.com/documentation/2.5.x/GlobalSettings#Java).
@@ -74,14 +74,14 @@ Due to new play guidelines, global object usage is deprecated and now it's recom
     }
 ```
 
-**IMPORTANT** pay attention to `preloadOrientEngine();` method, which is a hack to pre-initialize orient
+**IMPORTANT** pay attention to [preloadOrientEngine()](app/PersistenceLifecycle.java#L30) method, which is a hack to pre-initialize orient
 and avoid NoClassDefFound errors on start.
 
 ### Sample
 
-Actual sample is very simple: `app/controllers/SampleController`. It simply loads all records in `Sample` table and renders it as json.
+Actual sample is very simple: [SampleController](app/constrollers/SampleController.java). It simply loads all records in `Sample` table and renders it as json.
 
-Repository used for accessing database:
+[Repository](app/repositories/SampleRepository.java) used for accessing database:
 
 ```
     @Query("select from Sample")
