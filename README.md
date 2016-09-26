@@ -15,9 +15,9 @@ Run app either from IDE or using activator:
 $ bin/activator run
 ```
 
-Open http://localhost:9000 to see default home screen. Useful to check that guice context correctly started.
+Open [http://localhost:9000](http://localhost:9000) to see default home screen. Useful to check that guice context correctly started.
 
-Next open http://localhost:9000/samples to see sample json output - demo of using repository for accessing db.
+Next open [http://localhost:9000/samples](http://localhost:9000/samples) to see sample json output - demo of using repository for accessing db.
 
 ### Integration
 
